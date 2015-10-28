@@ -1,0 +1,26 @@
+doctype
+html(lang="pt-BR")
+head
+    title= title
+    <!--É necessario importar os estilos bootstrap e CSS -->
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+body
+    <!--Barra de menus definida com comandos do Bootstrap-->
+    div(class="navbar navbar-inverse navbar-fixed-top")
+        div(class="container")
+            div(class="navbar-header")
+                a(href="/" class="navbar-brand") Sistema Nodejs
+            div(class="navbar-collapse collapse" id="navbar-main")
+                ul(class="nav navbar-nav")
+                    li(class="dropdown")
+                        a(href="/usuarios") Usuários
+                    li
+                        a(href="/") Teste
+                    li
+                        a(href="/") Teste
+    div(class="container")
+        <!--Faz referencia ao conteudo de VIEW/USUARIOS/index.jade-->
+        block content
+        footer
+            p Desenvolvido por Marcio Nitão

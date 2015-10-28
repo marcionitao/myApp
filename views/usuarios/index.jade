@@ -1,0 +1,31 @@
+extends ../layout
+block content
+    h1 Listagem de Usuários
+    hr
+    br
+    a(href="/usuarios/create" title="Cadastrar", class="btn btn-success") Cadastrar
+    br
+    br
+    table(class="table")
+        thead
+            tr
+                th ID:
+                th Nome:
+                th Login:
+                th Senha:
+                th Data:
+                th Ações:
+        tbody
+            each valor, i in lista
+                tr
+                    td #{valor._id}
+                    td #{valor.nome}
+                    td #{valor.login}
+                    td #{valor.senha}
+                    td #{moment(valor.data_cad).format('DD/MM/YYYY')}
+                    td
+                        a(href="/usuarios/edit/#{valor._id}", title="Editar", class="btn btn-info")
+                            span(class="glyphicon glyphicon-pencil")
+                        &nbsp
+                        a(href="/usuarios/show/#{valor._id}", title="Editar", class="btn btn-primary")
+                            span(class="glyphicon glyphicon-search")
